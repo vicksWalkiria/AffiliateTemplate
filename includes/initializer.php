@@ -13,7 +13,7 @@ $maxProductosInComparisson= 3;
 $comparisson = array();
 $totalResults = array();
 while($row=mysqli_fetch_array($result) ) {
-	if(($i > $results) && ($totalComparedProducts < $maxProductosInComparisson) && ($row['price'] < 500)){
+	if(($i > $results) && ($totalComparedProducts < $maxProductosInComparisson)){
 		$comparisson[] = $row;		
 		$totalComparedProducts++;
 	}
