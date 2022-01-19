@@ -472,8 +472,12 @@
                 
 
                 <?php 
-                    $sql = "SELECT asin, name, brand, image_url from ".$dbTable." where category ='".$_GET['category']."'order by rand() LIMIT 4";
-                    $result = mysqli_query($conn, $sql);
+                    
+                    $sql = 'SELECT asin, name, brand, image_url from '.$dbTable.' where category = ? order by rand() LIMIT 4';
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("s", $category);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
 
                     while($row=mysqli_fetch_array($result)) {
 

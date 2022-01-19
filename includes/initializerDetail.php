@@ -6,7 +6,7 @@ $sql = 'SELECT * FROM `'.$dbTable.'` WHERE asin ="'.$_GET['asin'].'"';
 $product = mysqli_fetch_array(mysqli_query($conn, $sql));
 
 $brand = $product['brand'];
-
+$category = $_GET['category'];
 
 $content = $productSing." ".$product['name'];
 $name = $productSing." ".$product['name'];
