@@ -2,8 +2,13 @@
 
 
 $categoryTitle = ucwords(str_replace("-", " ", $_GET['category']));
-$sql = 'SELECT * FROM `'.$dbTable.'` WHERE asin ="'.$_GET['asin'].'"';
-$product = mysqli_fetch_array(mysqli_query($conn, $sql));
+$sql = 'SELECT * FROM `'.$dbTable.'` WHERE asin = ?';
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $_GET['asin']);
+$stmt->execute();
+$result = $stmt->get_result();
+$product = mysqli_fetch_array($result);
 
 $brand = $product['brand'];
 $category = $_GET['category'];

@@ -611,15 +611,15 @@ function printProperties($product)
     }
     if(strlen($product['width']) >0)
     {
-        $properties = $properties."<p><b>Ancho: </b>".$product['width']*2.54." cm.</p>";
+        $properties = $properties."<p><b>Ancho: </b>".number_format($product['width']*2.54,2)." cm.</p>";
     }
     if(strlen($product['length']) >0)
     {
-        $properties = $properties."<p><b>Largo: </b>".$product['length']*2.54." cm.</p>";
+        $properties = $properties."<p><b>Largo: </b>".number_format($product['length']*2.54,2)." cm.</p>";
     }
     if(strlen($product['height']) >0)
     {
-        $properties = $properties."<p><b>Alto: </b>".$product['height']*2.54." cm.</p>";
+        $properties = $properties."<p><b>Alto: </b>".number_format($product['height']*2.54,2)." cm.</p>";
     }
     if(strlen($product['color']) >0)
     {
