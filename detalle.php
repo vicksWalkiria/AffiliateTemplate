@@ -418,7 +418,7 @@
                 
 
                 <?php 
-                    $sql = "SELECT asin, name, brand, image_url from ".$dbTable." where brand ='".$brand."'order by rand() LIMIT 4";
+                    $sql = "SELECT category, asin, name, brand, image_url from ".$dbTable." where brand ='".$brand."'order by rand() LIMIT 4";
                     $result = mysqli_query($conn, $sql);
 
                     while($row=mysqli_fetch_array($result)) {
@@ -449,7 +449,7 @@
                                 </div>
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-dark btn-success mt-auto" href="'.$root.$_GET['category'].'/'.strtolower($row['asin']).'/">Ver '.$productSing
+                                    <div class="text-center"><a class="btn btn-outline-dark btn-success mt-auto" href="'.$root.$row['category'].'/'.strtolower($row['asin']).'/">Ver '.$productSing
                                     .'</a></div>
                                 </div>
                             </div>
