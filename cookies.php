@@ -1,4 +1,4 @@
-<?php include('constants.php');?>
+<?php include('includes/constants.php');?>
 
 <script src="<?php echo $root?>js/cookieconsent.min.js"></script>
     <script>
